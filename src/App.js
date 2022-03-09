@@ -1,8 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import Header from './components/Header';
+import CVWindow from './components/CVWindow';
 
-function App() {
-	return <div className="App"></div>;
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			editMode: false,
+		};
+		this.handleEdit = this.handleEdit.bind(this);
+	}
+
+	handleEdit() {
+		this.setState({
+			editMode: !this.state.editMode,
+		});
+	}
+
+	render() {
+		const { editMode } = this.state;
+		return (
+			<div className="App">
+				<Header editMode={editMode} onEdit={this.handleEdit} />
+				<CVWindow editMode={editMode} />
+			</div>
+		);
+	}
 }
-
-export default App;
