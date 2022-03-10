@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 export default class StaticHeading extends Component {
 	render() {
+		const editModeClass = 'edit-mode';
 		const renderEditButton = () => {
 			if (this.props.editMode) {
 				return <button onClick={this.props.onEdit}>Edit</button>;
 			}
 		};
 		return (
-			<div>
-				<h1>{this.props.name}</h1>
-				<h2>{this.props.title}</h2>
+			<div className={['cv-heading', editModeClass].join(' ')}>
+				<h2>{this.props.name}</h2>
+				<h3>{this.props.title}</h3>
 				{renderEditButton()}
 			</div>
 		);

@@ -26,7 +26,7 @@ export default class EditableHeading extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="cv-heading">
 				<h2>
 					<input
 						value={this.state.name}
