@@ -7,7 +7,7 @@ export default class Header extends Component {
 			<header>
 				<h1>CV Editor</h1>
 				<button className="btn-edit" onClick={this.props.onEdit}>
-					{this.props.editMode ? 'Preview' : 'Edit'}
+					{this.props.editMode ? 'Preview' : 'Edit Mode'}
 				</button>
 			</header>
 		);

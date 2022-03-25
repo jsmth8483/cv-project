@@ -9,6 +9,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	background-color: #eee;
 }
 
 header {
@@ -30,6 +31,7 @@ h2 {
 
 h3 {
 	margin: 10px 0 30px 0;
+	font-weight: 400;
 }
 
 .btn-edit {
@@ -42,6 +44,14 @@ h3 {
 
 .cv-window {
 	flex-grow: 1;
+	margin: 20px 30px;
+	max-width: 1200px;
+	background-color: white;
+	display: grid;
+	grid-template-rows: 150px;
+	grid-template-areas:
+		'heading heading heading heading'
+		'info main main main';
 }
 
 .edit-mode {
@@ -50,15 +60,61 @@ h3 {
 
 .cv-heading {
 	background-color: #555;
+	color: white;
 	position: relative;
 	padding: 5px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 20px;
+	grid-area: heading;
 }
 
 .cv-heading button {
 	position: absolute;
 	bottom: 10px;
+	padding: 5px 10px;
+	background-color: #03b4c6;
+	color: white;
+	border: none;
+	border-radius: 3px;
+}
+
+.info-pane {
+	background-color: #dedede;
+	grid-area: info;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding: 15px;
+}
+
+.info-section {
+	text-align: end;
+}
+
+.info-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: end;
+}
+
+.info-header button {
+	margin-left: 10px;
+}
+
+.info-section button {
+	background-color: transparent;
+	border: 2px solid #3a4d8f;
+	color: #3a4d8f;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.info-section p {
+	text-align: end;
+}
+
+.main-pane {
+	grid-area: main;
 }

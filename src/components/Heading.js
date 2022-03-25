@@ -40,7 +40,7 @@ export default class Heading extends Component {
 	render() {
 		const { editMode } = this.props;
 		const { name, title, editable } = this.state;
-
+		
 		let element;
 		if (editable && editMode) {
 			element = (
